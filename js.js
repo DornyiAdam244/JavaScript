@@ -1,22 +1,20 @@
-// Adatok beállítása (golyók dobozban)
-var adatok = [1, 2, 3, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7];
-
-// Statisztika objektum inicializálása (dobozok számlálóival)
+const N = 20;
+const MIN = 1;
+const MAX = 6;
+var dobasok = [];
 var statisztika = {};
+for (var i = 0; i <= N; i++) {
+    var szam = (MIN + Math.random() * MAX - MIN + 1);
+    dobasok.push(Math.floor(szam));
+}
+for (var i = 0; i < dobasok.length; i++) {
+    console.log(dobasok[i])
+    if(!statisztika[dobasok[i]]) {
+        statisztika[dobasok[i]] = 1;
+    }
+    else {
+        statisztika[dobasok[i]]++ 
 
-// Adatok tömb bejárása
-for (var i = 0; i < adatok.length; i++) {
-    // Jelenlegi golyó kiválasztása
-    var jelenlegiElem = adatok[i];
-
-    // Ha az elem még nem szerepelt a statisztika objektumban, inicializáljuk 1-gyel
-    if (!statisztika[jelenlegiElem]) {
-        statisztika[jelenlegiElem] = 1;
-    } else {
-        // Ha az elem már szerepel a statisztika objektumban, növeljük az értékét
-        statisztika[jelenlegiElem]++;
     }
 }
-
-// Eredmény kiírása a konzolon (dobozok tartalmának kiírása)
-console.log(statisztika);
+console.log(statisztika)

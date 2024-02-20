@@ -18,3 +18,8 @@ for (var i = 0; i < dobasok.length; i++) {
     }
 }
 console.log(statisztika)
+
+div = document.querySelector("div");
+for(var kulcs in statisztika) {
+    div.innerHTML += kulcs +":"+statisztika[kulcs] + "<br>";
+}
